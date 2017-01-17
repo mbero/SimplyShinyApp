@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\n\nshinyUI(fluidPage(\n  \n  titlePanel(\"Tytul\"),\n  fluidRow(\n    \n    sidebarPanel(\n      h3('Hello from sidebar')  \n    ),\n    mainPanel(\n      h4('Hello from mainPanel'),\n      plotOutput('histogram')\n    )\n    \n  )\n))",
+    "created" : 1484687004134.000,
+    "dirty" : false,
+    "encoding" : "CP1250",
+    "folds" : "",
+    "hash" : "4200786108",
+    "id" : "8AE12FB1",
+    "lastKnownWriteTime" : 1484687068,
+    "last_content_update" : 1484687068569,
+    "path" : "E:/R/Shiny/fishAnalysysShinyApp/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
