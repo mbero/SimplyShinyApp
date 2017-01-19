@@ -14,18 +14,9 @@ shinyServer(
     
     # 3. wczytanie danych i 4. przetworzenie brakujacych danych
     sledzie <- read.csv("sledzie.csv", na.strings = "?")
+    
+    sledzie_sample <- read.csv("sledzie.csv", nrows = 10)
     # sledzie <- sledzie[, -1] # usuwam pierwszy wiersz z numeracja wierszy od 0 do n-1
-    
-    # 5. rozmiar zbioru i statystyki
-    dim(sledzie)
-    str(sledzie)
-    summary(sledzie)
-    
-    # sprawdz braki, ile ich jest
-    apply(sledzie, 2, function(x) sum(is.na(x)))
-    
-    # sprawdz braki, jaki procent
-    apply(sledzie, 2, function(x) sum(is.na(x))/length(x)) # ok 0,03%
     
     # czym zastapic braki? moze srednia?
     sledzie <- data.frame(apply(sledzie, 2, function(x) {
@@ -34,12 +25,11 @@ shinyServer(
       x[ind] <- srednia
       x
     }))
-    
-    
-    output$histogram <- renderPlot({
-      title <- "Fishes histogram"
-       hist(runif(sledzie))
+   
+    output$table = renderDataTable({
+      sledzie
     })
+    
     
   }
 )
