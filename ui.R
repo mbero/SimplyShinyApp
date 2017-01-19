@@ -1,7 +1,8 @@
 library(shiny)
 library(ggplot2)
 
-shinyUI(fluidPage(
+shinyUI(
+  fluidPage(
   
   titlePanel("Fish analysis - Sample Shiny App"),
   fluidRow(
@@ -26,5 +27,15 @@ shinyUI(fluidPage(
     
     )#end of mainPanel
     
-  )#end ofmain fluidRow
+  )#end first fluidRow
+  ,
+  fluidRow(    
+    sidebarPanel(
+      h3('Histogram'),
+      p('Choose variable to generate histogram with shows changes of given variable trough time')
+    ),
+    mainPanel(
+      
+    )
+  )
 ))
