@@ -32,10 +32,15 @@ shinyUI(
   fluidRow(    
     sidebarPanel(
       h3('Histogram'),
-      p('Choose variable to generate histogram with shows changes of given variable trough time')
+      p('Choose variable to generate histogram with shows changes of given variable trough time'),
+      selectInput("lista", "Choose property :",
+                  list("Month" = "xmonth", 
+                       "Length" = "length"
+                  ))
     ),
     mainPanel(
-      
+      #histogram with selected property
+      plotOutput(outputId = "hist") 
     )
   )
 ))
