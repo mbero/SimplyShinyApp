@@ -33,9 +33,9 @@ shinyServer(
     output$hist <- renderPlot({
       
       # Render a barplot
-      barplot(sledzie[,"length"], 
-              main="length",
-              ylab="Length of fish",
+      barplot(sledzie[,input$property], 
+              main=input$property,
+              ylab=input$property,
               xlab="Time")
     })
     
