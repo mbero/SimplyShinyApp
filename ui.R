@@ -34,8 +34,10 @@ shinyUI(
       h3('Histogram'),
       p('Choose variable to generate histogram with shows changes of given variable trough time'),
       selectInput("property", "Choose property :",
-                  list("Month" = "xmonth", 
-                       "Length" = "length"
+                  list("Length of fish" = "length", 
+                       "Temperature close to water" = "sst",
+                       "Salinity" = "sal",
+                       "Amount of fishes in given year" = "recr"
                   ))
     ),
     mainPanel(
